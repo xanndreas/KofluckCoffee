@@ -5,8 +5,8 @@
 /vendor
 /.idea
 .env
-.composer.json
-.composer.lock
+composer.json
+composer.lock
 .env.backup
 .phpunit.result.cache
 Homestead.json
