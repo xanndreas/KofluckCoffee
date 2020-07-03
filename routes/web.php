@@ -1,13 +1,13 @@
 <?php
 
 Route::redirect('/', '/login');
-Route::get('/home', function () {
-    if (session('status')) {
-        return redirect()->route('admin.home')->with('status', session('status'));
-    }
 
-    return redirect()->route('admin.home');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('shop', 'ShopController@index')->name('users.shop');
+Route::get('outlet', 'OutletsController@index')->name('users.outlet');
+Route::get('training', 'TrainingController@index')->name('users.training');
+Route::get('contact', 'ContactController@index')->name('users.contact');
+
 
 Auth::routes();
 Route::get('userVerification/{token}', 'UserVerificationController@approve')->name('userVerification');
