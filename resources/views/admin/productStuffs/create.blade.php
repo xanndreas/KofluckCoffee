@@ -30,16 +30,6 @@
                 <span class="help-block">{{ trans('cruds.productStuff.fields.price_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="stock">{{ trans('cruds.productStuff.fields.stock') }}</label>
-                <input class="form-control {{ $errors->has('stock') ? 'is-invalid' : '' }}" type="number" name="stock" id="stock" value="{{ old('stock', '0') }}" step="1">
-                @if($errors->has('stock'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('stock') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.productStuff.fields.stock_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label class="required" for="product_category_id">{{ trans('cruds.productStuff.fields.product_category') }}</label>
                 <select class="form-control select2 {{ $errors->has('product_category') ? 'is-invalid' : '' }}" name="product_category_id" id="product_category_id" required>
                     @foreach($product_categories as $id => $product_category)

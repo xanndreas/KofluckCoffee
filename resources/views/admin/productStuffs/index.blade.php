@@ -31,13 +31,13 @@
                         {{ trans('cruds.productStuff.fields.price') }}
                     </th>
                     <th>
-                        {{ trans('cruds.productStuff.fields.stock') }}
-                    </th>
-                    <th>
                         {{ trans('cruds.productStuff.fields.product_category') }}
                     </th>
                     <th>
                         {{ trans('cruds.productStuff.fields.photos') }}
+                    </th>
+                    <th>
+                        {{ trans('cruds.productStuff.fields.stock') }}
                     </th>
                     <th>
                         &nbsp;
@@ -98,9 +98,9 @@
 { data: 'id', name: 'id' },
 { data: 'name', name: 'name' },
 { data: 'price', name: 'price' },
-{ data: 'stock', name: 'stock' },
 { data: 'product_category_name', name: 'product_category.name' },
 { data: 'photos', name: 'photos', sortable: false, searchable: false },
+{ data: 'stock', name: 'stock' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,

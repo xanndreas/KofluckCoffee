@@ -1,13 +1,14 @@
 <?php
 
+
 Route::redirect('/', '/login');
+Route::get('/home', function () {
+    if (session('status')) {
+        return redirect()->route('admin.home')->with('status', session('status'));
+    }
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('shop', 'ShopController@index')->name('users.shop');
-Route::get('outlet', 'OutletsController@index')->name('users.outlet');
-Route::get('training', 'TrainingController@index')->name('users.training');
-Route::get('contact', 'ContactController@index')->name('users.contact');
-
+    return redirect()->route('admin.home');
+});
 
 Auth::routes();
 Route::get('userVerification/{token}', 'UserVerificationController@approve')->name('userVerification');
@@ -71,9 +72,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('galleries/ckmedia', 'GalleriesController@storeCKEditorImages')->name('galleries.storeCKEditorImages');
     Route::resource('galleries', 'GalleriesController');
 
-    // Transaksis
-    Route::delete('transaksis/destroy', 'TransaksiController@massDestroy')->name('transaksis.massDestroy');
-    Route::resource('transaksis', 'TransaksiController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
 // Change password

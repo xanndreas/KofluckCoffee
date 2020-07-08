@@ -31,16 +31,6 @@
                 <span class="help-block">{{ trans('cruds.productStuff.fields.price_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="stock">{{ trans('cruds.productStuff.fields.stock') }}</label>
-                <input class="form-control {{ $errors->has('stock') ? 'is-invalid' : '' }}" type="number" name="stock" id="stock" value="{{ old('stock', $productStuff->stock) }}" step="1">
-                @if($errors->has('stock'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('stock') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('cruds.productStuff.fields.stock_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label class="required" for="product_category_id">{{ trans('cruds.productStuff.fields.product_category') }}</label>
                 <select class="form-control select2 {{ $errors->has('product_category') ? 'is-invalid' : '' }}" name="product_category_id" id="product_category_id" required>
                     @foreach($product_categories as $id => $product_category)
@@ -53,6 +43,20 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.productStuff.fields.product_category_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label class="required" for="stock">{{ trans('cruds.productStuff.fields.stock') }}</label>
+                <select class="form-control select2 {{ $errors->has('stock') ? 'is-invalid' : '' }}" name="stock" id="stock" required>
+                    <option value="">Pilih Kondisi Stok</option>
+                    <option value="Ada"> Ada</option>
+                    <option value="Habis"> Habis</option>
+                </select>
+                @if($errors->has('stock'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('stock') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.productStuff.fields.stock') }}</span>
             </div>
             <div class="form-group">
                 <label for="photos">{{ trans('cruds.productStuff.fields.photos') }}</label>

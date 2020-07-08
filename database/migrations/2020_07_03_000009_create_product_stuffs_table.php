@@ -12,7 +12,7 @@ class CreateProductStuffsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->decimal('price', 15, 2)->nullable();
-            $table->integer('stock')->nullable();
+            $table->string('stock');
             $table->timestamps();
             $table->softDeletes();
         });

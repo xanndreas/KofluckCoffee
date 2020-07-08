@@ -77,16 +77,6 @@
                 </a>
             </li>
         @endcan
-        @can('transaksi_access')
-            <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.transaksis.index") }}" class="c-sidebar-nav-link {{ request()->is('admin/transaksis') || request()->is('admin/transaksis/*') ? 'active' : '' }}">
-                    <i class="fa-fw fas fa-credit-card c-sidebar-nav-icon">
-
-                    </i>
-                    {{ trans('cruds.transaksi.title') }}
-                </a>
-            </li>
-        @endcan
         @can('product_access')
             <li class="c-sidebar-nav-dropdown">
                 <a class="c-sidebar-nav-dropdown-toggle" href="#">

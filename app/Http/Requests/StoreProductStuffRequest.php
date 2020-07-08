@@ -24,9 +24,6 @@ class StoreProductStuffRequest extends FormRequest
             ],
             'stock'               => [
                 'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
             ],
             'product_category_id' => [
                 'required',

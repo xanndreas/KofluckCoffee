@@ -23,10 +23,7 @@ class UpdateProductStuffRequest extends FormRequest
                 'required',
             ],
             'stock'               => [
-                'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
+                'nullable'
             ],
             'product_category_id' => [
                 'required',

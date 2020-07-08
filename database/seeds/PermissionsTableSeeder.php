@@ -246,26 +246,6 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => '60',
-                'title' => 'transaksi_create',
-            ],
-            [
-                'id'    => '61',
-                'title' => 'transaksi_edit',
-            ],
-            [
-                'id'    => '62',
-                'title' => 'transaksi_show',
-            ],
-            [
-                'id'    => '63',
-                'title' => 'transaksi_delete',
-            ],
-            [
-                'id'    => '64',
-                'title' => 'transaksi_access',
-            ],
-            [
-                'id'    => '65',
                 'title' => 'profile_password_edit',
             ],
         ];
